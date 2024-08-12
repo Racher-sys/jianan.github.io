@@ -170,17 +170,17 @@
       <i class="iconfont iconbaseline-close-px"></i>
     </div>
     <ul class="menu-content"><li class="menu-item">
-        <a href="/ " class="underline "> 首页</a>
+        <a href="/jianan.github.io/ " class="underline "> 首页</a>
       </li><li class="menu-item">
-        <a href="/galleries/ " class="underline "> 摄影</a>
+        <a href="/jianan.github.io/galleries/ " class="underline "> 摄影</a>
       </li><li class="menu-item">
-        <a href="/archives/ " class="underline "> 归档</a>
+        <a href="/jianan.github.io/archives/ " class="underline "> 归档</a>
       </li><li class="menu-item">
-        <a href="/tags/ " class="underline "> 标签</a>
+        <a href="/jianan.github.io/tags/ " class="underline "> 标签</a>
       </li><li class="menu-item">
-        <a href="/categories/ " class="underline "> 分类</a>
+        <a href="/jianan.github.io/categories/ " class="underline "> 分类</a>
       </li><li class="menu-item">
-        <a href="/about/ " class="underline "> 关于</a>
+        <a href="/jianan.github.io/about/ " class="underline "> 关于</a>
       </li></ul>
     
       <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
@@ -200,7 +200,7 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>August 12, 2024</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>554</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>800</span>
     </div>
   </div>
 </section>
@@ -209,7 +209,7 @@
         
         <p>这是一篇介绍 Hexo 的文章，由于我的博客是使用 Hexo 框架集成的，为了更好的供自己参考（怕我以后忘记了 hhh），所以记录一下下。</p>
 <h1 id="什么是-Hexo"><a href="#什么是-Hexo" class="headerlink" title="什么是 Hexo"></a>什么是 Hexo</h1><p>官网的解释：“A fast, simple &amp; powerful blog framework, powered by Node.js”。</p>
-<p>首先它是一个博客框架，其次它是使用Node.js编写的。</p>
+<p>首先它是一个博客框架，其次它是使用 Node.js 编写的。</p>
 <p>其特点是：</p>
 <ol>
 <li>快速生成（我猜这是快速生成博客文件，是蛮快的，一行命令即可）</li>
@@ -218,17 +218,25 @@
 <li>强大的 API 可实现无限扩展</li>
 <li>数百个主题和插件</li>
 </ol>
-<h1 id="如何使用Hexo"><a href="#如何使用Hexo" class="headerlink" title="如何使用Hexo"></a>如何使用Hexo</h1><p>下载hexo</p>
+<h1 id="如何使用-Hexo"><a href="#如何使用-Hexo" class="headerlink" title="如何使用 Hexo"></a>如何使用 Hexo</h1><h2 id="1-GitHub-Page-开通"><a href="#1-GitHub-Page-开通" class="headerlink" title="1. GitHub Page 开通"></a>1. GitHub Page 开通</h2><p>官方教程：<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages/getting-started-with-github-pages/creating-a-github-pages-site">创建 GitHub Pages 站点</a></p>
+<p>简单来说就是新建一个名称为<user>.github.io<code>或</code><organization>.github.io 的仓库</p>
+<h2 id="2-Blog-生成"><a href="#2-Blog-生成" class="headerlink" title="2. Blog 生成"></a>2. Blog 生成</h2><p>下载 hexo</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-cli -g<br>// 如果mac或linux上下载了brew<br>brew install hexo<br></code></pre></td></tr></table></figure>
 
-<p>生成blog</p>
+<p>生成 blog</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init blog<br><span class="hljs-built_in">cd</span> blog<br></code></pre></td></tr></table></figure>
 
 <p>开启服务器，可进行本地查看博客</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo server<br></code></pre></td></tr></table></figure>
 
-<p>生成新的markdown格式的文章，可以在source&#x2F;_posts中找到新建的文章</p>
+<p>生成新的 markdown 格式的文章，可以在 source&#x2F;_posts 中找到新建的文章</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">hexo new &#x27;文章标题&#x27;<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-关联-GitHub-Page"><a href="#3-关联-GitHub-Page" class="headerlink" title="3. 关联 GitHub Page"></a>3. 关联 GitHub Page</h2><p>打开_config.yml，拉到最下面将 deploy 后面的全删掉，复制粘贴如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">type: git<br>repository: 你的仓库地址<br>branch: main<br></code></pre></td></tr></table></figure>
+
+<p>将文章同步到 github 上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g //生成<br>hexo d //上传<br></code></pre></td></tr></table></figure>
 
       </section>
       <section class="extra">
@@ -269,7 +277,7 @@
           
   <aside class="toc-wrap">
     <h3 class="toc-title">文章目录：</h3>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Hexo"><span class="toc-text">什么是 Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Hexo"><span class="toc-text">如何使用Hexo</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Hexo"><span class="toc-text">什么是 Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo"><span class="toc-text">如何使用 Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-GitHub-Page-%E5%BC%80%E9%80%9A"><span class="toc-text">1. GitHub Page 开通</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Blog-%E7%94%9F%E6%88%90"><span class="toc-text">2. Blog 生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%85%B3%E8%81%94-GitHub-Page"><span class="toc-text">3. 关联 GitHub Page</span></a></li></ol></li></ol>
   </aside>
 
         
